@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- SEO Meta Tags -->
+    <title>ByteHarbor Hub - Software & Course Resources</title> 
+    <meta name="description" content="Download links for useful PC software and educational courses in design, editing, and more. Explore resources for Photoshop, Premiere, Windows, Blender, Camtasia, and other tools.">
+    <meta name="keywords" content="software download, free software, adobe photoshop, adobe premiere, windows 10, windows 11, capcut pro, idm, blender course, vfx course, motion design, video editing, camtasia tutorial, tech resources, byteharbor">
+    <meta name="author" content="ByteHarbor Hub (Template)"> 
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* CSS Reset and Base Styles */
+        :root {
+            --primary-color: #6a11cb; /* Vibrant Purple */
+            --secondary-color: #2575fc; /* Bright Blue */
+            --background-color: #121212; /* Dark Background */
+            --card-background: #1e1e1e; /* Slightly Lighter Card BG */
+            --text-color: #e0e0e0; /* Light Grey Text */
+            --heading-color: #ffffff; /* White Headings */
+            --accent-color: #00bcd4; /* Teal Accent */
+            --shadow-color: rgba(0, 0, 0, 0.4);
+            --gradient: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            overflow-x: hidden; /* Prevent horizontal scroll */
+        }
+
+        /* Header Styling */
+        header {
+            background: var(--gradient);
+            color: var(--heading-color);
+            padding: 2rem 1rem;
+            text-align: center;
+            box-shadow: 0 4px 15px var(--shadow-color);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 3px solid var(--accent-color);
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            animation: fadeInDown 1s ease-out;
+        }
+        
+        header p {
+            font-size: 1.1rem;
+            font-weight: 300;
+            animation: fadeInUp 1s ease-out 0.3s;
+            animation-fill-mode: backwards; /* Start animation even if delayed */
+        }
+
+        /* Main Content Area */
+        main {
+            padding: 2rem 1rem;
+            max-width: 1200px;
+            margin: 2rem auto;
+        }
+
+        /* Section Styling */
+        .content-section {
+            margin-bottom: 3rem;
+            padding: 2rem;
+            background-color: rgba(255, 255, 255, 0.03);
+            border-radius: 15px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .content-section h2 {
+            font-size: 2rem;
+            color: var(--heading-color);
+            margin-bottom: 2rem;
+            text-align: center;
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+        
+        .content-section h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: var(--gradient);
+            border-radius: 2px;
+        }
+
+        /* Grid for Cards */
+        .item-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        /* Card Styling */
+        .card {
+            background-color: var(--card-background);
+            border-radius: 10px;
+            padding: 1.5rem;
+            box-shadow: 0 5px 15px var(--shadow-color);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            /* Animation preparation */
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        
+        .card.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .card:hover {
+            transform: translateY(-10px) scale(1.03);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.6);
+        }
+
+        .card h3 {
+            font-size: 1.3rem;
+            color: var(--heading-color);
+            margin-bottom: 0.8rem;
+            min-height: 3.9rem; /* Ensure titles take up similar space */
+        }
+        
+        .card p {
+            font-size: 0.9rem;
+            margin-bottom: 1.5rem;
+            flex-grow: 1; /* Allow description to take available space */
+            color: var(--text-color);
+        }
+
+        /* Button Styling */
+        .btn {
+            display: inline-block;
+            background: var(--gradient);
+            color: #ffffff;
+            padding: 0.8rem 1.5rem;
+            border: none;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            text-align: center;
+            transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .btn:hover {
+            background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5);
+            color: #fff; /* Ensure text remains white */
+        }
+        
+        .btn:active {
+             transform: translateY(-1px);
+             box-shadow: 0 3px 8px rgba(0, 0, 0, 0.4);
+        }
+
+        /* Footer Styling */
+        footer {
+            text-align: center;
+            padding: 2rem 1rem;
+            margin-top: 3rem;
+            background-color: var(--card-background);
+            color: var(--text-color);
+            font-size: 0.9rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        footer a {
+            color: var(--accent-color);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        footer a:hover {
+            color: var(--secondary-color);
+            text-decoration: underline;
+        }
+
+        /* Warning Message Styling */
+        .warning {
+            background-color: #ffc107; /* Amber color */
+            color: #333; /* Dark text for readability */
+            padding: 1rem 1.5rem;
+            margin: 1.5rem auto;
+            border-radius: 8px;
+            max-width: 1000px; /* Limit width */
+            text-align: center;
+            font-weight: 600;
+            border: 2px solid #e0a800;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+        
+        .warning strong {
+             display: block;
+             margin-bottom: 0.5rem;
+             font-size: 1.1em;
+        }
+
+        /* Animations */
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2rem;
+            }
+            header p {
+                 font-size: 1rem;
+            }
+            main {
+                padding: 1.5rem 0.5rem;
+            }
+            .content-section {
+                padding: 1.5rem;
+            }
+             .content-section h2 {
+                font-size: 1.8rem;
+            }
+            .item-grid {
+                 grid-template-columns: 1fr; /* Stack cards on smaller screens */
+                 gap: 1rem;
+            }
+            .card h3 {
+                min-height: auto; /* Remove fixed min-height on mobile */
+            }
+            .warning {
+                margin: 1rem 0.5rem; /* Adjust margins for mobile */
+                padding: 0.8rem 1rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+             header h1 {
+                font-size: 1.8rem;
+            }
+             header p {
+                 font-size: 0.9rem;
+             }
+             .btn {
+                 padding: 0.7rem 1.2rem;
+                 font-size: 0.9rem;
+                 width: 100%; /* Make button full width */
+             }
+        }
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>⚙️ ByteHarbor Hub 💾</h1> 
+        <p>Your Source for PC Software & Learning Resources</p>
+    </header>
+
+    <main>
+        <!-- IMPORTANT WARNING -->
+        <div class="warning">
+            <strong>⚠️ Important Disclaimer:</strong> Downloading software or courses from unofficial sources can be risky and may violate copyright laws. Ensure you have the right to use any downloaded content and be aware of potential security threats like malware. Proceed with caution and at your own risk.
+        </div>
+        
+        <!-- Software Section -->
+        <section id="software" class="content-section">
+            <h2>😤 PC Software</h2>
+            <div class="item-grid">
+                <!-- Software Card Example 1 -->
+                <div class="card" data-animate>
+                    <h3>Adobe Photoshop</h3>
+                    <p>Industry-standard raster graphics editor.</p>
+                    <a href="https://drive.google.com/drive/folders/1--7HCES-QQdxM1XasHEEwe3OLr_AaMYV" target="_blank" rel="noopener noreferrer nofollow" class="btn">Download Link 🔗</a> 
+                    <!-- Added nofollow and noopener for external links -->
+                    <!-- WARNING: This link was provided in your request and likely points to unofficial/pirated software. Use caution. -->
+                </div>
+                <!-- Software Card Example 2 -->
+                <div class="card" data-animate>
+                    <h3>Adobe Premiere Pro</h3>
+                    <p>Professional video editing software.</p>
+                    <a href="https://drive.google.com/drive/folders/1--7HCES-QQdxM1XasHEEwe3OLr_AaMYV" target="_blank" rel="noopener noreferrer nofollow" class="btn">Download Link 🔗</a>
+                    <!-- WARNING: This link was provided in your request and likely points to unofficial/pirated software. Use caution. -->
+                </div>
+                 <!-- Software Card Example 3 -->
+                 <div class="card" data-animate>
+                    <h3>Windows 10</h3>
+                    <p>Operating System by Microsoft.</p>
+                    <a href="https://drive.google.com/drive/folders/1--7HCES-QQdxM1XasHEEwe3OLr_AaMYV" target="_blank" rel="noopener noreferrer nofollow" class="btn">Download Link 🔗</a>
+                    <!-- WARNING: This link was provided in your request and likely points to unofficial/pirated software. Use caution. -->
+                </div>
+                 <!-- Software Card Example 4 -->
+                 <div class="card" data-animate>
+                    <h3>Windows 11</h3>
+                    <p>The latest Operating System by Microsoft.</p>
+                    <a href="https://drive.google.com/drive/folders/1--7HCES-QQdxM1XasHEEwe3OLr_AaMYV" target="_blank" rel="noopener noreferrer nofollow" class="btn">Download Link 🔗</a>
+                    <!-- WARNING: This link was provided in your request and likely points to unofficial/pirated software. Use caution. -->
+                </div>
+                 <!-- Software Card Example 5 -->
+                 <div class="card" data-animate>
+                    <h3>Capcut Pro</h3>
+                    <p>Popular video editing application.</p>
+                     <a href="https://drive.google.com/drive/folders/1--7HCES-QQdxM1XasHEEwe3OLr_AaMYV" target="_blank" rel="noopener noreferrer nofollow" class="btn">Download Link 🔗</a>
+                    <!-- WARNING: This link was provided in your request and likely points to unofficial/pirated software. Use caution. -->
+                </div>
+                 <!-- Software Card Example 6 -->
+                 <div class="card" data-animate>
+                    <h3>IDM (Internet Download Manager)</h3>
+                    <p>Tool to increase download speeds.</p>
+                    <a href="https://drive.google.com/drive/folders/1--7HCES-QQdxM1XasHEEwe3OLr_AaMYV" target="_blank" rel="noopener noreferrer nofollow" class="btn">Download Link 🔗</a>
+                    <!-- WARNING: This link was provided in your request and likely points to unofficial/pirated software. Use caution. -->
+                </div>
+                <!-- Add more software cards here as needed -->
+                 <div class="card" data-animate>
+                    <h3>More PC Software</h3>
+                    <p>Explore a wider range of applications.</p>
+                    <a href="https://drive.google.com/drive/folders/1--7HCES-QQdxM1XasHEEwe3OLr_AaMYV" target="_blank" rel="noopener noreferrer nofollow" class="btn">Explore Folder 🔗</a>
+                    <!-- WARNING: This link was provided in your request and likely points to unofficial/pirated software. Use caution. -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Courses Section -->
+        <section id="courses" class="content-section">
+            <h2>📚 Learning Courses</h2>
+            <div class="item-grid">
+                <!-- Course Card Example 1 -->
+                <div class="card" data-animate>
+                    <h3>Blender VFX & CGI Ads: Banner Unroll</h3>
+                    <p>Learn pro-level CGI and VFX techniques in Blender for advertisements.</p>
+                    <a href="https://drive.google.com/drive/folders/1siKMiW3nUlODx1eW6d6KYYS5d1TcM3Kk?usp=sharing" target="_blank" rel="noopener noreferrer nofollow" class="btn">Download Course 📂</a>
+                    <!-- WARNING: This GDrive link might contain copyrighted course material shared without permission. -->
+                    <a href="https://www.udemy.com/course/learn-blender-vfx-cgi-ads-banner-unroll-pro-level-cgi/" target="_blank" rel="noopener noreferrer nofollow" class="btn" style="margin-top: 10px; background: var(--accent-color);">View on Udemy</a> 
+                    <!-- Added legitimate link for comparison/purchase -->
+                </div>
+                <!-- Course Card Example 2 -->
+                 <div class="card" data-animate>
+                    <h3>Blender & After Effects Motion Designing</h3>
+                    <p>Combine Blender and After Effects for stunning motion graphics.</p>
+                    <a href="https://drive.google.com/drive/folders/1g9lTzTqeUQQN4XZJ93raGVk-nePUgT1U?usp=sharing" target="_blank" rel="noopener noreferrer nofollow" class="btn">Download Course 📂</a>
+                     <!-- WARNING: This GDrive link might contain copyrighted course material shared without permission. -->
+                </div>
+                 <!-- Course Card Example 3 -->
+                 <div class="card" data-animate>
+                    <h3>Flatpack FX Animation Course</h3>
+                    <p>Master flat design animation techniques.</p>
+                     <a href="https://drive.google.com/drive/folders/1PtVX-n08Y27gNkeqPX-uBaN-uX72cgdH?usp=sharing" target="_blank" rel="noopener noreferrer nofollow" class="btn">Download Course 📂</a>
+                     <!-- WARNING: This GDrive link might contain copyrighted course material shared without permission. -->
+                </div>
+                 <!-- Course Card Example 4 -->
+                 <div class="card" data-animate>
+                    <h3>Camtasia Mastery: Beginner to Pro</h3>
+                    <p>Comprehensive guide to video editing with Camtasia.</p>
+                     <a href="https://drive.google.com/drive/folders/1-GqseCXdqY0jfQJmBXJwEHcxMwyACR0A?usp=sharing" target="_blank" rel="noopener noreferrer nofollow" class="btn">Download Course 📂</a>
+                     <!-- WARNING: This GDrive link might contain copyrighted course material shared without permission. -->
+                </div>
+                <!-- Course Card Example 5 -->
+                 <div class="card" data-animate>
+                    <h3>Mobile Video Editing Mastery Course</h3>
+                    <p>Edit videos like a pro directly on your mobile device.</p>
+                     <a href="https://drive.google.com/drive/folders/1Lv2nDoHw7lDv1GTDKT6wOFZAQOZFOjNN?usp=sharing" target="_blank" rel="noopener noreferrer nofollow" class="btn">Download Course 📂</a>
+                    <!-- WARNING: This GDrive link might contain copyrighted course material shared without permission. -->
+                </div>
+                <!-- Add more course cards here -->
+            </div>
+        </section>
+        
+    </main>
+
+    <footer>
+        <p>&copy; 2024 ByteHarbor Hub (Template). All rights reserved (on template design).</p> 
+        <p>Please use the resources responsibly and legally. We do not host or directly endorse the linked content.</p>
+        <!-- You might want to add links to Terms of Service or Privacy Policy here -->
+        <!-- <p><a href="#">Terms of Service</a> | <a href="#">Privacy Policy</a></p> -->
+    </footer>
+
+    <script>
+        // JavaScript for Smooth Animations on Scroll
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const animatedElements = document.querySelectorAll('[data-animate]');
+
+            if (!window.IntersectionObserver) {
+                console.warn('IntersectionObserver not supported. Animations might not work as expected.');
+                animatedElements.forEach(el => el.classList.add('visible')); // Show all if observer fails
+                return;
+            }
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        // Optional: Unobserve after animation to save resources
+                        // observer.unobserve(entry.target); 
+                    }
+                    // Optional: Add class removal if you want elements to re-animate when scrolling back up
+                    // else {
+                    //     entry.target.classList.remove('visible');
+                    // }
+                });
+            }, {
+                root: null, // Use the viewport as the root
+                threshold: 0.1, // Trigger when 10% of the element is visible
+                // rootMargin: '0px 0px -50px 0px' // Optional: Adjust trigger margin (e.g., trigger 50px before it's fully in view)
+            });
+
+            animatedElements.forEach(el => {
+                observer.observe(el);
+            });
+        });
+
+    </script>
+
+</body>
+</html>
